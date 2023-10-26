@@ -1,13 +1,15 @@
 import React from 'react';
-import TestingElem from "widgets/TestingElem";
-import {Link} from "react-router-dom";
+import {getDeals} from "shared/api/model/api";
+import Carousel from "shared/ui/Carousel/Carousel";
+
 
 const MainPage = () => {
+    // getDeals({storeID:1})
+
+
     return (
         <div>
-            main page
-            <TestingElem/>
-            <Link to={'/321'} >321123321</Link>
+          <Carousel/>
         </div>
     );
 };
