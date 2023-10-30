@@ -1,8 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { StateSchema } from './StateSchema'
 
-export const store = configureStore({
-    reducer: {},
-})
+export function createReduxStore(initialState?: StateSchema) {
+    return configureStore<StateSchema>({
+        reducer: {},
+        preloadedState: initialState,
+    })
+}
+
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
