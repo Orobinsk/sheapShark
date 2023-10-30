@@ -1,4 +1,4 @@
-export type Deal = {
+export interface IDeal {
     dealID: string
     dealRating: string
     gameID: string
@@ -18,4 +18,24 @@ export type Deal = {
     storeID: string
     thumb: string
     title: string
+}
+
+export interface IGetDealsParams {
+    storeID?: number;
+    pageNumber?: number;
+    pageSize?:number;
+    sortBy?:string;
+    desc?:boolean
+    lowerPrice?:number;
+    upperPrice?:number;
+    metacritic?:number;
+    maxAge?:number;
+    steamAppID?:string;
+    title?:string;
+    exact?:boolean;
+    AAA?:boolean;
+    steamworks?:boolean;
+    onSale?:boolean;
+    output?:string;
+    id?:string;
 }
