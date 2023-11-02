@@ -1,4 +1,4 @@
-import { getDeals } from "./model/api"
+import { fetchLogo, getDeals } from "./model/api"
 
-export * from "./model/types"
-export {getDeals}
+export * from "../types/types"
+export { getDeals, fetchLogo }

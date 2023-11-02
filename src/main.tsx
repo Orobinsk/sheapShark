@@ -9,10 +9,10 @@ import { StoreProvider } from 'app/providers/StoreProvider';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <StoreProvider>
-      <BrowserRouter>
-        <Index />
-      </BrowserRouter>
-    </StoreProvider>
+    {/* <StoreProvider> */}
+    <BrowserRouter>
+      <Index />
+    </BrowserRouter>
+    {/* </StoreProvider> */}
   </React.StrictMode>,
 )

@@ -1,5 +1,6 @@
-import React, { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+
 
 interface CarouselType {
     slides: ReactNode[]
@@ -8,7 +9,7 @@ interface CarouselType {
 const Carousel: FC<CarouselType> = ({ slides }) => {
     const [slideIndex, setSlideIndex] = useState(0)
     const [animation, setAnimation] = useState(true)
-   
+
     useEffect(() => {
         setAnimation(false);
         const timeout = setTimeout(() => {
@@ -47,7 +48,7 @@ const Carousel: FC<CarouselType> = ({ slides }) => {
                 </div>
             }
 
-            <div className="flex justify-center mt-2">
+            <div className="flex justify-center mt-4">
                 <button
                     onClick={() => changeSlide('back')}
                     className="rounded-full flex me-3 items-center justify-center h-6 w-6 bg-primary-text hover:bg-primary hover:animate-spring hover:scale-110"
@@ -56,7 +57,7 @@ const Carousel: FC<CarouselType> = ({ slides }) => {
                 </button>
                 <div className='max-h-96'>
                     <div className="flex flex-row justify-center align-center space-x-2 pt-2">
-                        {slides.map((item, index) =>
+                        {slides.map((_, index) =>
                             <button
                                 onClick={() => setSlideIndex(index)}
                                 className={((index === slideIndex) ? "bg-primary-text" : "bg-secondary-text") + ' transition-colors duration-300 ease-in-out w-6 h-2 rounded hover:bg-primary'}
@@ -64,6 +65,7 @@ const Carousel: FC<CarouselType> = ({ slides }) => {
                     </div>
                 </div>
                 <button
+                    data-testid='btn-right'
                     onClick={() => changeSlide('next')}
                     className=" rounded-full flex ms-3 items-center justify-center h-6 w-6 bg-primary-text hover:animate-spring hover:scale-110 hover:bg-primary"
                 >
