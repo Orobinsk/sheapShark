@@ -10,8 +10,8 @@ const MainCarousel = () => {
 
     useEffect(() => {
         getDeals({ pageSize: 12 }).then(data => setDeals(data))
+        
     }, [])
-    console.log(deals)
     for (let i = 0; i < deals.length; i += 4) {
         const slide = (
             <div className="grid grid-cols-4 gap-3" key={`slide-${i}`}>
