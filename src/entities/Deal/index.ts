@@ -1,4 +1,3 @@
-import DealBigCard from "./ui/DealCard/DealBigCard";
-import DealSmallCard from "./ui/DealSmallCard/DealSmallCard";
+import DealCard from './ui/DealCard/DealCard'
 
-export { DealBigCard, DealSmallCard}
+export { DealCard }

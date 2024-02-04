@@ -1,4 +1,4 @@
-import DealBigCard from 'entities/Deal/ui/DealCard/DealBigCard';
+import DealCard from 'entities/Deal/ui/DealCard/DealCard';
 import React, { useEffect, useState } from 'react';
 import { fetchLogo, getDeals } from 'shared/api';
 import Carousel from "shared/ui/Carousel/Carousel";

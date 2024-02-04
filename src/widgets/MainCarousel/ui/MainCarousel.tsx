@@ -1,8 +1,8 @@
-import { DealBigCard, DealSmallCard } from "entities/Deal";
+import { DealCard } from "entities/Deal";
 import { useEffect, useState } from "react";
 import { IDeal, getDeals } from "shared/api";
+import { Carousel } from "shared/ui";
 
-import Carousel from "shared/ui/Carousel/Carousel"
 
 const MainCarousel = () => {
     const [deals, setDeals] = useState<IDeal[]>([])
@@ -10,8 +10,8 @@ const MainCarousel = () => {
 
     useEffect(() => {
         getDeals({ pageSize: 12 }).then(data => setDeals(data))
-        
     }, [])
+
     for (let i = 0; i < deals.length; i += 4) {
         const slide = (
             <div className="grid grid-cols-4 gap-3" key={`slide-${i}`}>
@@ -19,12 +19,11 @@ const MainCarousel = () => {
                     <div
                         key={`big-deal-${i + index}`}
                     >
-                        <DealBigCard data={deal} />
+                        <DealCard data={deal} />
                     </div>
                 ))}
             </div>
         );
-
         slides.push(slide);
     }
     return (
