@@ -1,0 +1,30 @@
+.layout {
+    @apply flex flex-col;
+
+    .slides {
+        @apply animate-[pulse_.5s_ease-in-out] max-h-96 m-auto;
+    }
+
+    .navigation {
+        @apply flex justify-center  mt-4;
+
+        .change_slide_button {
+            @apply rounded-full flex me-3 ms-3 items-center justify-center h-6 w-6 bg-primary-text hover:bg-primary hover:animate-spring hover:scale-110;
+        }
+
+        .arrow {
+            @apply h-5 w-5 text-white;
+        }
+
+        .slides_wrapper {
+            @apply max-h-96 flex flex-row justify-center items-center space-x-2;
+        }
+
+        .slide {
+            @apply transition-colors duration-300 ease-in-out w-6 h-2 rounded hover:bg-primary bg-secondary-text;
+        }
+        .active {
+            @apply bg-primary-text;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { FC, ReactNode, useEffect, useState } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import classes from './Carousel.module.scss'
 
 
 interface CarouselType {
@@ -41,35 +42,35 @@ const Carousel: FC<CarouselType> = ({ slides }) => {
 
 
     return (
-        <div className='flex flex-col item-center'>
+        <div className={classes.layout}>
             {animation &&
-                <div className="animate-[pulse_.5s_ease-in-out] max-h-96 m-auto">
+                <div className={classes.slides}>
                     {slides[slideIndex]}
                 </div>
             }
 
-            <div className="flex justify-center mt-4">
+            <div className={classes.navigation}>
                 <button
                     onClick={() => changeSlide('back')}
-                    className="rounded-full flex me-3 items-center justify-center h-6 w-6 bg-primary-text hover:bg-primary hover:animate-spring hover:scale-110"
+                    className={classes.change_slide_button}
                 >
-                    <ChevronLeftIcon className="h-5 w-5 text-white font-3" />
+                    <ChevronLeftIcon className={classes.arrow} />
                 </button>
-                <div className='max-h-96'>
-                    <div className="flex flex-row justify-center align-center space-x-2 pt-2">
+                <div className={classes.slides_wrapper}>  
                         {slides.map((_, index) =>
-                            <button
-                                onClick={() => setSlideIndex(index)}
-                                className={((index === slideIndex) ? "bg-primary-text" : "bg-secondary-text") + ' transition-colors duration-300 ease-in-out w-6 h-2 rounded hover:bg-primary'}
-                                key={index} />)}
-                    </div>
+                          <button
+                          onClick={() => setSlideIndex(index)}
+                          className={`${classes.slide} ${index === slideIndex && classes.active}`}
+                          key={index} />
+                      
+                        )}
                 </div>
                 <button
                     data-testid='btn-right'
                     onClick={() => changeSlide('next')}
-                    className=" rounded-full flex ms-3 items-center justify-center h-6 w-6 bg-primary-text hover:animate-spring hover:scale-110 hover:bg-primary"
+                    className={classes.change_slide_button}
                 >
-                    <ChevronRightIcon className="h-5 w-5 text-white" />
+                    <ChevronRightIcon className={classes.arrow} />
                 </button>
             </div>
         </div>

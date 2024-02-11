@@ -9,7 +9,7 @@ const MainCarousel = () => {
     const slides = [];
 
     useEffect(() => {
-        getDeals({ pageSize: 12 }).then(data => setDeals(data))
+        getDeals({AAA: 1, pageSize: 12 }).then(data => setDeals(data))
     }, [])
 
     for (let i = 0; i < deals.length; i += 4) {
