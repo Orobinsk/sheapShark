@@ -1,0 +1,62 @@
+.wrapper {
+    @apply rounded-2xl w-64 h-72 border border-secondary-text overflow-hidden cursor-pointer;
+
+    .img_wrap {
+        @apply max-h-56 overflow-hidden;
+        .img {
+            @apply transition-all duration-300 ease-in-out m-auto  object-cover w-full h-28;
+        }
+        .img_active {
+            @apply brightness-75;
+        }
+    }
+
+    .card_body {
+        @apply p-4 flex flex-col h-44;
+
+        .title {
+            @apply font-bold duration-300 ease-in-out text-primary-text;
+        }
+        .title_active {
+            @apply text-primary;
+        }
+        .date_release {
+            @apply text-secondary-text text-xs;
+        }
+
+        .card_footer {
+            @apply mb-0 mt-auto;
+
+            .price_wrapper {
+                @apply grid gap-2 grid-flow-col justify-start mt-3;
+
+                .sale_price {
+                    @apply text-primary-text font-bold;
+                }
+                .normal_price {
+                    @apply text-secondary-text line-through text-xs;
+                }
+                .sales_tag {
+                    @apply flex;
+
+                    .img_sales_tag {
+                        @apply h-4;
+                    }
+                    .sales_tag_savings {
+                        @apply bg-primary text-white rounded-r-sm text-xs h-4 px-1;
+                    }
+                }
+            }
+            .store_wrapper {
+                @apply grid gap-2 grid-flow-col justify-start mt-2;
+
+                .store_line {
+                    @apply bg-primary w-0.5 h-4;
+                }
+                .store_title {
+                    @apply text-secondary-text leading-none;
+                }
+            }
+        }
+    }
+}
